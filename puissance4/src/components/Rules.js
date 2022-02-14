@@ -46,6 +46,8 @@ class Rules extends React.Component {
             Appuyez sur le bouton "Reset" pour commencer une nouvelle partie.
           </p>
         </div>
+        {/* ******************* Sound Icon **************** */}
+       
       </aside>
     );
   }
