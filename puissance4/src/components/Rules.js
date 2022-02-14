@@ -12,6 +12,14 @@ import React from "react";
 import children from "../assets/children.png";
 
 class Rules extends React.Component {
+  renderCurrentPlayer() {
+    if (this.props.currentPlayer === 1 || this.props.currentPlayer === null) {
+      return <h2 className="currentPlayerRed">Player 1</h2>;
+    } else {
+      return <h2 className="currentPlayerYellow">Player 2</h2>;
+    }
+  }
+
   render() {
     return (
       <aside className="gameRules">
@@ -46,6 +54,7 @@ class Rules extends React.Component {
             Appuyez sur le bouton "Reset" pour commencer une nouvelle partie.
           </p>
         </div>
+        {this.renderCurrentPlayer()}
       </aside>
     );
   }

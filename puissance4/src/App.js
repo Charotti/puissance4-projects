@@ -261,7 +261,7 @@ class App extends React.Component {
     return (
       <main>
         <section>
-          <Rules />
+          <Rules currentPlayer={this.state.currentPlayer} />
           <div className="board">
             <h1>Puissance 4</h1>
             <p className="message">{this.state.message}</p>

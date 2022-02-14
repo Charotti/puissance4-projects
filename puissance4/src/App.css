@@ -291,3 +291,26 @@ table {
   font-family: "oleo bold";
   color: #f15930;
 }
+
+/* Current player*/
+
+.currentPlayerRed {
+  margin-top: 15%;
+  color: #f15930;
+  text-shadow: 2px 0 0 rgb(255, 255, 255), -2px 0 0 rgb(255, 255, 255),
+    0 2px 0 rgb(255, 255, 255), 0 -2px 0 rgb(255, 255, 255),
+    1px 1px rgb(255, 255, 255), -1px -1px 0 rgb(255, 255, 255),
+    1px -1px 0 rgb(255, 255, 255), -1px 1px 0 rgb(255, 255, 255);
+  font-size: 4rem;
+  font-family: "oleo bold";
+}
+.currentPlayerYellow {
+  margin-top: 15%;
+  text-shadow: 2px 0 0 rgb(255, 255, 255), -2px 0 0 rgb(255, 255, 255),
+    0 2px 0 rgb(255, 255, 255), 0 -2px 0 rgb(255, 255, 255),
+    1px 1px rgb(255, 255, 255), -1px -1px 0 rgb(255, 255, 255),
+    1px -1px 0 rgb(255, 255, 255), -1px 1px 0 rgb(255, 255, 255);
+  font-size: 4rem;
+  font-family: "oleo bold";
+  color: #ffd700;
+}
