@@ -13,7 +13,9 @@ import "./App.css";
 import Row from "./components/Row";
 import Rules from "./components/Rules";
 import Timer from "./components/Timer";
+import marojump from "./assets/maro-jump.mp3";
 
+let audio = new Audio(marojump);
 class App extends React.Component {
   constructor() {
     super();
@@ -77,8 +79,9 @@ class App extends React.Component {
     // C = COLUMNINDEX - R = ROWINDEX
     // CHECK IF GAME IS OVER OR NOT
     if (!this.state.gameOver) {
+      //Play sound
+      audio.play();
       let board = this.state.board;
-
       for (let r = 5; r >= 0; r--) {
         if (!board[r][c]) {
           board[r][c] = this.state.currentPlayer;
