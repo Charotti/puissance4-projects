@@ -13,9 +13,9 @@ import "./App.css";
 import Row from "./components/Row";
 import Rules from "./components/Rules";
 import Timer from "./components/Timer";
-import marojump from "./assets/maro-jump.mp3";
+import sound from "./assets/audio.mp3";
 
-let audio = new Audio(marojump);
+let audio = new Audio(sound);
 class App extends React.Component {
   constructor() {
     super();
