@@ -39,7 +39,6 @@ class App extends React.Component {
     this.play = this.play.bind(this);
     this.countdownTimer = this.countdownTimer.bind(this);
     this.resetTimer = this.resetTimer.bind(this);
-    this.renderIcon = this.renderIcon.bind(this);
     this.toggleAudio = this.toggleAudio.bind(this);
   }
 
@@ -275,38 +274,16 @@ class App extends React.Component {
     audio.currentTime = 0;
     audio.play();
   }
-
-  renderIcon() {
-    if (this.state.soundOn) {
-      return (
-        <div className="soundIcon-wrapper" onClick={this.toggleAudio}>
-          <img
-            src={volume}
-            style={{ width: "2rem" }}
-            className="sound-icon"
-          ></img>
-        </div>
-      );
-    } else {
-      return (
-        <div className="soundIcon-wrapper" onClick={this.toggleAudio}>
-          <img
-            src={mute}
-            style={{ width: "2rem" }}
-            className="sound-icon"
-          ></img>
-        </div>
-      );
-    }
-  }
-
+  
   render() {
+    const soundIconImage = this.state.soundOn ? mute : volume; 
     return (
       <main>
         <section>
-          {/* SOUND ICON */}
-          {this.renderIcon()}
-          <Rules
+          
+          <Rules 
+            image={soundIconImage}
+            onClick={this.toggleAudio}
           />
 
           <div className="board">
