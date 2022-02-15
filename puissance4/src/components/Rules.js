@@ -24,6 +24,10 @@ class Rules extends React.Component {
     return (
       <aside className="gameRules">
         {/* <img className="logo" src={logo} alt="logo jeu"></img> */}
+        {/*********** SOUND ICON *******/}
+        <div className="soundIcon-wrapper" onClick={this.props.onClick}>
+          <img src={this.props.image} className="sound-icon" alt="soundIcon" />{" "}
+        </div>
         <div className="logoTitle">
           <p className="title">
             <span className="letterM">M</span>

@@ -14,8 +14,11 @@ import Row from "./components/Row";
 import Rules from "./components/Rules";
 import Timer from "./components/Timer";
 import sound from "./assets/audio.mp3";
+import volume from "./assets/volume.png";
+import mute from "./assets/mute.png";
 
 let audio = new Audio(sound);
+
 class App extends React.Component {
   constructor() {
     super();
@@ -29,12 +32,14 @@ class App extends React.Component {
       message: "",
       remainingTime: 10,
       startGame: false,
+      soundOn: false,
     };
 
     // BINDS
     this.play = this.play.bind(this);
     this.countdownTimer = this.countdownTimer.bind(this);
     this.resetTimer = this.resetTimer.bind(this);
+    this.toggleAudio = this.toggleAudio.bind(this);
   }
 
   // INITIATE NEW GAME
@@ -80,7 +85,8 @@ class App extends React.Component {
     // CHECK IF GAME IS OVER OR NOT
     if (!this.state.gameOver) {
       //Play sound
-      audio.play();
+      this.makeSound();
+
       let board = this.state.board;
       for (let r = 5; r >= 0; r--) {
         if (!board[r][c]) {
@@ -114,7 +120,7 @@ class App extends React.Component {
       });
     }
     // CONSOLE WITH PLAYER MOVES
-    console.log(this.state.board);
+    // console.log(this.state.board);
   }
 
   checkVerticalMoves(board) {
@@ -257,12 +263,32 @@ class App extends React.Component {
     this.initBoard();
   }
 
+  toggleAudio() {
+    this.setState((prevState) => {
+      return { soundOn: !prevState.soundOn };
+    });
+    audio.muted = !this.state.soundOn;
+  }
+
+  makeSound() {
+    audio.currentTime = 0;
+    audio.play();
+  }
+  
   render() {
+    const soundIconImage = this.state.soundOn ? mute : volume; 
     return (
       <main>
         <section>
-          <Rules currentPlayer={this.state.currentPlayer} />
+          
+          <Rules 
+            currentPlayer={this.state.currentPlayer}
+            image={soundIconImage}
+            onClick={this.toggleAudio}
+          />
+
           <div className="board">
+            
             <h1>Puissance 4</h1>
             <p className="message">{this.state.message}</p>
 

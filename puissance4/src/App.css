@@ -314,3 +314,19 @@ table {
   font-family: "oleo bold";
   color: #ffd700;
 }
+/* sound icon */
+.sound-icon {
+  width: 100% !important;
+  filter: invert();
+  float: right;
+}
+.soundIcon-wrapper {
+  opacity: 0.8;
+  width: 5rem !important;
+  position: absolute;
+  right: 0;
+}
+.soundIcon-wrapper:hover {
+  opacity: 1;
+  cursor: pointer;
+}
