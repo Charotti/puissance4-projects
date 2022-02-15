@@ -268,12 +268,12 @@ class App extends React.Component {
     this.setState((prevState) => {
       return { soundOn: !prevState.soundOn };
     });
+    audio.muted = !this.state.soundOn;
   }
 
   makeSound() {
-    if (this.state.soundOn) {
-      audio.play();
-    }
+    audio.currentTime = 0;
+    audio.play();
   }
 
   renderIcon() {
